@@ -1,0 +1,57 @@
+"With derivatives you can have almost any payoff pattern you want.
+If you can draw it on paper, or describe it in words,
+someone can design a derivative that gives you that payoff."
+- Fischer Black
+
+EXOTIC:
+underlying asset assumed to follow a geometric Brownian motion
+dS = mu * S * dt + sigma * S * dz
+where
+mu = expected instantaneous rate of return on the underlying asset
+sigma = instantaneous volatility of the rate of return
+dz = a Wiener process
+volatility and risk free rate assumed to be constant throughout option lifetime
+most formulas written on a general form
+including a cost-of-carry term
+which makes it possible to use the same formula to price options on a large class of underlying assets
+formulas are closed-form solutions
+so can only be used on european options
+
+
+Variable purchase options (VPO)
+a VPO is basically a call option.
+But where the number of underlying shares is stochastic rather than fixed
+or more precisely, a deterministic function of the asset price
+the strike price of a VPO is typically a fixed discount to the underlying share price at maturity
+the payoff at maturity is equal to 
+
+
+I think i will use 3 to 5 methods of valuation
+then display the mean and the median of the prices
+numerical methods, not closed formulas
+
+European options:
+Arithmetic Monte Carlo (more accurate) 8
+IQMC (importance sampling) OR Quasi random Monte Carlo (both faster) 8
+
+American options:
+American Monte Carlo (very slow) 8
+
+
+Both:
+Trinomial trees (more efficient and flexible than binomial) 7
+Explicit finite difference 7
+Implicit finite difference 7
+Crank-Nicholson method (these 3 can value most single asset options) 7
+
+
+I will price European options because of bigger choice (can do monte carlo without being too slow)
+Or maybe American barrier options (for no other reason than I hear that is difficult)
+
+American Barrier options:
+Trinomial trees 7 - more efficient and flexible than binomial
+Finite differences 7
+    Explicit
+    Implicit - simpler, may require smaller time steps for stability
+    Crank-Nicholson - balance of accuracy and stability
+American Monte Carlo 8 - flexible for high dimensional and path dependent options
